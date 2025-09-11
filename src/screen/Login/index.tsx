@@ -11,6 +11,9 @@ import icons from '../../constants/icons';
 import fonts from '../../utils/fonts';
 
 const Login: React.FC = () => {
+    const handleLogin=() => {
+        console.log('google login')
+    };
   return (
     <View style={styles.container}>
       <ScrollView
@@ -23,14 +26,18 @@ const Login: React.FC = () => {
           resizeMode="contain"
         />
 
-          <Text style={styles.welcomText}>WELCOM TO ESTATEHUB</Text>
-          <Text style={styles.heading}>
-            Let’s get you closer to
-            <Text style={styles.heading2}> your ideal home</Text>
-          </Text>
-          <Text style={styles.loginText}>Login to EstateHub with Google</Text>
-        <TouchableOpacity style={styles.googleButton}>
-          <Image source={icons.googleIcon} style={styles.googleIcon} />
+        <Text style={styles.welcomText}>WELCOME TO ESTATEHUB</Text>
+        <Text style={styles.heading}>
+          Let’s get you closer to
+          <Text style={styles.heading2}> your ideal home</Text>
+        </Text>
+        <Text style={styles.loginText}>Login to EstateHub with Google</Text>
+        <TouchableOpacity style={styles.googleButton} onPress={handleLogin}>
+          <Image
+            source={icons.googleIcon}
+            style={styles.googleIcon}
+            resizeMode="contain"
+          />
           <Text style={styles.btnText}>Sign Up with Google</Text>
         </TouchableOpacity>
       </ScrollView>
@@ -55,7 +62,7 @@ const styles = StyleSheet.create({
     gap: 10,
     borderWidth: 1,
     borderColor: '#FF80000A',
-    height: 59,
+    paddingVertical:18,
     marginHorizontal: 15,
     marginBottom: 40,
     shadowColor: '#00000033', 
@@ -78,9 +85,7 @@ const styles = StyleSheet.create({
     fontFamily: fonts.Regular,
     color: '#666876',
     alignSelf: 'center',
-    top: -40,
-    zIndex: 999,
-    marginBottom: 0,
+    marginBottom: 12,
   },
   loginText: {
     fontSize: 18,
