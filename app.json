@@ -1,4 +1,7 @@
 {
   "name": "EstateHub",
-  "displayName": "EstateHub"
+  "displayName": "EstateHub",
+  "expo": {
+    "scheme": "appwrite-callback-68c2cafa002622bafa60"
+  }
 }

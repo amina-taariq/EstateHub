@@ -9,11 +9,24 @@ import {
 import images from '../../constants/images';
 import icons from '../../constants/icons';
 import fonts from '../../utils/fonts';
+import { Googlelogin } from '../../../lib/googleLogin';
+import { useState } from 'react';
+
 
 const Login: React.FC = () => {
-    const handleLogin=() => {
-        console.log('google login')
-    };
+const [user, setUser] = useState(null);
+
+const handleLogin = async () => {
+  const result = await Googlelogin();
+
+  if (result.success) {
+    setUser(user); // save user in state
+    console.log('User logged in:', user);
+  } else {
+    console.log('Login error:', result.error);
+  }
+};
+
   return (
     <View style={styles.container}>
       <ScrollView
