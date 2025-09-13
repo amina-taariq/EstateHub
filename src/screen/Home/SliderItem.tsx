@@ -25,8 +25,7 @@ const SliderItem: React.FC<HomeSliderItemProps> = ({
   title,
   location,
   price,
-  rating,
-  category,
+  rating
 }) => {
   return (
     <TouchableOpacity style={styles.Container}>

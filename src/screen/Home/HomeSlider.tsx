@@ -6,7 +6,7 @@ import {
 } from 'react-native';
 import SliderItem from './SliderItem';
 interface DataItem{
-  id: string;
+  id: any;
   image: any;
     title: string;
     location: string;
