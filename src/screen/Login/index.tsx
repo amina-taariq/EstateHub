@@ -1,4 +1,5 @@
 import {
+  Alert,
   Image,
   ScrollView,
   StyleSheet,
@@ -11,17 +12,26 @@ import icons from '../../constants/icons';
 import fonts from '../../utils/fonts';
 import { Googlelogin } from '../../../lib/googleLogin';
 import { useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+type RootStackParamList = {
+  Home: undefined;
+};
+
+type LoginScreenNavigationProp = StackNavigationProp<RootStackParamList>;
 
 
 const Login: React.FC = () => {
+const navigation = useNavigation<LoginScreenNavigationProp>();
 const [user, setUser] = useState(null);
 
 const handleLogin = async () => {
   const result = await Googlelogin();
 
   if (result.success) {
-    setUser(user); // save user in state
+    setUser(user); 
     console.log('User logged in:', user);
+    navigation.replace( 'Home');
   } else {
     console.log('Login error:', result.error);
   }
