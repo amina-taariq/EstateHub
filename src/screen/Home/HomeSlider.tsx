@@ -43,7 +43,7 @@ const HomeSlider: React.FC<sliderListProps> = ({data}) => {
         decelerationRate={'fast'}
         snapToInterval={adjustedWidth}
         showsHorizontalScrollIndicator={false}
-        contentContainerStyle={{ paddingVertical:20,paddingRight:20}}
+        contentContainerStyle={{ paddingTop: 20, paddingBottom:32,paddingRight:20}}
       />
     </View>
   );
