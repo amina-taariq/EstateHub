@@ -4,6 +4,7 @@ import searchIcon from '../assets/icons/search.png';
 import filterIcon from '../assets/icons/filter.png';
 import starIcon from '../assets/icons/star.png';
 import heartIcon from '../assets/icons/heart.png';
+import grayHeartIcon from '../assets/icons/heart-gray.png';
 
 export default {
   googleIcon,
@@ -11,5 +12,6 @@ export default {
   searchIcon,
   filterIcon,
   starIcon,
-  heartIcon
+  heartIcon,
+  grayHeartIcon
 };

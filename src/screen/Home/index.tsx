@@ -4,15 +4,16 @@ import {
   ScrollView,
   StyleSheet,
   Text,
-  TouchableOpacity,
   View,
 } from 'react-native';
 import HomeHeader from './HomeHeader';
 import fonts from '../../utils/fonts';
-import { cards, categories } from '../../constants/data'
+import { cards } from '../../constants/data'
 import HomeSlider from './HomeSlider';
+import CategoriesGrid from './CategoriesGrid';
 
 const Home: React.FC = () => {
+ 
   return (
     <View style={styles.container}>
       <KeyboardAvoidingView
@@ -33,29 +34,7 @@ const Home: React.FC = () => {
             <Text style={styles.h2}>Our Recommendation</Text>
             <Text style={styles.seeAll}>See All</Text>
           </View>
-          <View style={styles.categoriesContainer}>
-            <TouchableOpacity
-              style={[styles.category, { backgroundColor: '#FF8000' }]}
-            >
-              <Text style={styles.SelectedCategoryText}>All</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity
-              style={[styles.category, { backgroundColor: '#FF80000A' }]}
-            >
-              <Text style={styles.categoryText}>Villa</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={[styles.category, { backgroundColor: '#FF80000A' }]}
-            >
-              <Text style={styles.categoryText}>Apartments</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={[styles.category, { backgroundColor: '#FF80000A' }]}
-            >
-              <Text style={styles.categoryText}>Other</Text>
-            </TouchableOpacity>
-          </View>
+          <CategoriesGrid data={cards} />
         </ScrollView>
       </KeyboardAvoidingView>
     </View>

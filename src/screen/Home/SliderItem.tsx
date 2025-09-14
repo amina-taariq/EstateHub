@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
   },
   overlay: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: 'rgba(0,0,0,0.2)',
+    backgroundColor: 'rgba(72, 70, 70, 0.2)',
     borderRadius: 20,
   },
   review: {
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: 58,
     position: 'absolute',
-    right:24,
+    right: 24,
   },
   star: {
     width: 14,

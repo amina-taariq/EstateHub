@@ -95,6 +95,7 @@ const styles = StyleSheet.create({
     color: '#191D31',
     fontSize: 16,
     fontFamily: fonts.Medium,
+    fontWeight:600
   },
   searchSubContainer: {
     flexDirection: 'row',
