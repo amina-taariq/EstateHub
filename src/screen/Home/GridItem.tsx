@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import icons from '../../constants/icons';
 import fonts from '../../utils/fonts';
+import { useNavigation } from '@react-navigation/native';
 
 type GridItemProps = {
   image: ImageSourcePropType;
@@ -25,29 +26,33 @@ const GridItem: React.FC<GridItemProps> = ({
     price,
     rating,
 }) => {
+   const navigation = useNavigation();
+    const handlePress = () => { 
+      (navigation as any).navigate('Detail');
+    };
 
   return (
-      <TouchableOpacity style={styles.itemContainer}>
-        <View>
-          <Image source={image} style={styles.image} />
-          <View style={styles.overlay} />
-          <View style={styles.review}>
-            <Image source={icons.starIcon} style={styles.star} />
-            <Text style={styles.reviewText}>{rating}</Text>
-          </View>
+    <TouchableOpacity style={styles.itemContainer} onPress={handlePress}>
+      <View>
+        <Image source={image} style={styles.image} />
+        <View style={styles.overlay} />
+        <View style={styles.review}>
+          <Image source={icons.starIcon} style={styles.star} />
+          <Text style={styles.reviewText}>{rating}</Text>
         </View>
-        <View style={styles.info}>
-          <Text style={styles.titleText}>{title}</Text>
-          <Text style={styles.locationText}>{location}</Text>
+      </View>
+      <View style={styles.info}>
+        <Text style={styles.titleText}>{title}</Text>
+        <Text style={styles.locationText}>{location}</Text>
 
-          <View style={styles.moneySection}>
-            <Text style={styles.moneyText}>{price}</Text>
-            <TouchableOpacity>
-              <Image source={icons.grayHeartIcon} style={styles.heartIcon} />
-            </TouchableOpacity>
-          </View>
+        <View style={styles.moneySection}>
+          <Text style={styles.moneyText}>{price}</Text>
+          <TouchableOpacity>
+            <Image source={icons.grayHeartIcon} style={styles.heartIcon} />
+          </TouchableOpacity>
         </View>
-      </TouchableOpacity>
+      </View>
+    </TouchableOpacity>
   );
 };
 const styles = StyleSheet.create({

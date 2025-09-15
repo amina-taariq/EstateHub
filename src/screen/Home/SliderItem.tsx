@@ -10,6 +10,7 @@ import {
 import icons from '../../constants/icons';
 import fonts from '../../utils/fonts';
 import { Double } from 'react-native/Libraries/Types/CodegenTypes';
+import { useNavigation } from '@react-navigation/native';
 
 type HomeSliderItemProps = {
   image: ImageSourcePropType;
@@ -27,8 +28,13 @@ const SliderItem: React.FC<HomeSliderItemProps> = ({
   price,
   rating
 }) => {
+  const navigation = useNavigation();
+  const handlePress = () => { 
+    (navigation as any).navigate('Detail');
+  };
   return (
-    <TouchableOpacity style={styles.Container}>
+
+    <TouchableOpacity style={styles.Container} onPress={handlePress}>
       <ImageBackground
         source={image}
         resizeMode="cover"
