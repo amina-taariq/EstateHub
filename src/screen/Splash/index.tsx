@@ -7,6 +7,7 @@ import fonts from '../../utils/fonts';
 type RootStackParamList = {
   Login: undefined;
   Home: undefined;
+  BottomTabs:undefined
 };
 
 type SplashScreenNavigationProp = StackNavigationProp<RootStackParamList>;
@@ -17,7 +18,7 @@ const Splash: React.FC = () => {
     const navigation = useNavigation<SplashScreenNavigationProp>();
     useEffect(() => {
       const timer = setTimeout(() => {
-        navigation.replace( userLogin?'Home':'Login');
+        navigation.replace(userLogin ? 'BottomTabs' : 'Login');
       }, 3000);
 
       return () => clearTimeout(timer);
