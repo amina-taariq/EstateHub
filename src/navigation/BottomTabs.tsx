@@ -58,7 +58,7 @@ const BottomTabs = () => {
               <TabIcon
                 focused={focused}
                 activeIcon={icons.profileActiveIcon}
-                inActiveIcon={icons.profileIcon}
+                inActiveIcon={icons.tabProfileIcon}
                 label="Profile"
               />
             ),

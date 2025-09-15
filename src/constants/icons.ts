@@ -7,10 +7,16 @@ import heartIcon from '../assets/icons/heart.png';
 import grayHeartIcon from '../assets/icons/heart-gray.png';
 import homeIcon from '../assets/icons/bottomTabIcons/home.png';
 import homeActiveIcon from '../assets/icons/bottomTabIcons/home-active.png';
-import profileIcon from '../assets/icons/bottomTabIcons/profile.png';
+import tabProfileIcon from '../assets/icons/bottomTabIcons/profile.png';
 import profileActiveIcon from '../assets/icons/bottomTabIcons/profile-active.png';
 import tabSearchIcon from '../assets/icons/bottomTabIcons/search.png';
 import searchActiveIcon from '../assets/icons/bottomTabIcons/search-active.png';
+import editIcon from '../assets/icons/edit.png';
+import logoutIcon from '../assets/icons/logout.png';
+import shieldIcon from '../assets/icons/shield-done.png';
+import languageIcon from '../assets/icons/language.png';
+import profileIcon from '../assets/icons/profile.png';
+
 
 export default {
   googleIcon,
@@ -25,5 +31,10 @@ export default {
   profileIcon,
   profileActiveIcon,
   tabSearchIcon,
-  searchActiveIcon
+  searchActiveIcon,
+  editIcon,
+  logoutIcon,
+  shieldIcon,
+  languageIcon,
+  tabProfileIcon,
 };

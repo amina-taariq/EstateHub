@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 20,
+    marginTop: 25,
     gap: 5,
     width: 74,
   },
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
   focusedLabel: {
     fontSize: 12,
     fontWeight: 500,
-    color: '#8B5DFF',
+    color: '#FF8000',
     fontFamily: fonts.Medium,
   },
 });

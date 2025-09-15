@@ -1,10 +1,10 @@
 import {
   StyleSheet,
-    View,
-  Image, 
+  View,
+  Image,
   Text,
   TouchableOpacity,
-  ImageSourcePropType
+  ImageSourcePropType,
 } from 'react-native';
 import icons from '../../constants/icons';
 import fonts from '../../utils/fonts';
@@ -20,16 +20,16 @@ type GridItemProps = {
 };
 
 const GridItem: React.FC<GridItemProps> = ({
-    image,
-    title,
-    location,
-    price,
-    rating,
+  image,
+  title,
+  location,
+  price,
+  rating,
 }) => {
-   const navigation = useNavigation();
-    const handlePress = () => { 
-      (navigation as any).navigate('Detail');
-    };
+  const navigation = useNavigation();
+  const handlePress = () => {
+    (navigation as any).navigate('Detail');
+  };
 
   return (
     <TouchableOpacity style={styles.itemContainer} onPress={handlePress}>
@@ -64,13 +64,13 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.1,
     shadowRadius: 10,
-    elevation: 5,
+    elevation: 1,
     borderRadius: 12,
     paddingTop: 16,
     paddingHorizontal: 14,
-      paddingBottom: 20,
+    paddingBottom: 20,
   },
-    image: {
+  image: {
     width: '100%',
     height: 154,
     borderRadius: 10,
