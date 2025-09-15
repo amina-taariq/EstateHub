@@ -16,6 +16,12 @@ import logoutIcon from '../assets/icons/logout.png';
 import shieldIcon from '../assets/icons/shield-done.png';
 import languageIcon from '../assets/icons/language.png';
 import profileIcon from '../assets/icons/profile.png';
+import backIcon from '../assets/icons/back.png';
+import blackHeartIcon from '../assets/icons/blackHeart.png';
+import shareIcon from '../assets/icons/share.png';
+import bedIcon from '../assets/icons/bed.png';
+import bathIcon from '../assets/icons/bath.png';
+import areaIcon from '../assets/icons/area.png';
 
 
 export default {
@@ -37,4 +43,10 @@ export default {
   shieldIcon,
   languageIcon,
   tabProfileIcon,
+  backIcon,
+  blackHeartIcon,
+  shareIcon,
+  bedIcon,
+  bathIcon,
+  areaIcon,
 };

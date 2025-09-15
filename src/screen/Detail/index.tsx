@@ -3,12 +3,15 @@ import {
   Platform,
   ScrollView,
   StyleSheet,
-  Text,
   View,
 } from 'react-native';
+import ImageSlider from './ImageSlider';
+import { gallery } from '../../constants/data';
+import DetailSection from './DetailSection';
 
 
 const DetailScreen: React.FC = () => {
+  
   return (
     <View style={styles.container}>
       <KeyboardAvoidingView
@@ -17,9 +20,10 @@ const DetailScreen: React.FC = () => {
       >
         <ScrollView
           keyboardShouldPersistTaps="handled"
-                  showsVerticalScrollIndicator={false}>
-                  <Text>Detail Screen</Text>
-          
+          showsVerticalScrollIndicator={false}
+        >
+          <ImageSlider images={gallery} />
+          <DetailSection/>
         </ScrollView>
       </KeyboardAvoidingView>
     </View>

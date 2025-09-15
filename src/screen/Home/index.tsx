@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import HomeHeader from './HomeHeader';
 import fonts from '../../utils/fonts';
-import { cards } from '../../constants/data'
+import { cards, featuredCards } from '../../constants/data';
 import HomeSlider from './HomeSlider';
 import CategoriesGrid from './CategoriesGrid';
 
@@ -29,7 +29,7 @@ const Home: React.FC = () => {
             <Text style={styles.h2}>Featured</Text>
             <Text style={styles.seeAll}>See All</Text>
           </View>
-          <HomeSlider data={cards} />
+          <HomeSlider data={featuredCards} />
           <View style={styles.titleContainer}>
             <Text style={styles.h2}>Our Recommendation</Text>
             <Text style={styles.seeAll}>See All</Text>

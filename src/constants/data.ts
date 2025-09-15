@@ -43,20 +43,22 @@ export const cards = [
 
 export const featuredCards = [
   {
-    title: "Featured 1",
-    location: "Location 1",
-    price: "$100",
+    id: '1',
+    title: 'Featured 1',
+    location: 'Location 1',
+    price: '$100',
     rating: 4.8,
     image: images.newYork,
-    category: "house",
+    category: 'house',
   },
   {
-    title: "Featured 2",
-    location: "Location 2",
-    price: "$200",
+    id: '2',
+    title: 'Featured 2',
+    location: 'Location 2',
+    price: '$200',
     rating: 3,
     image: images.japan,
-    category: "flat",
+    category: 'flat',
   },
 ];
 
@@ -143,28 +145,10 @@ export const facilities = [
 ];
 
 export const gallery = [
-  {
-    id: 1,
-    image: images.newYork,
-  },
-  {
-    id: 2,
-    image: images.japan,
-  },
-  {
-    id: 3,
-    image: images.newYork,
-  },
-  {
-    id: 4,
-    image: images.japan,
-  },
-  {
-    id: 5,
-    image: images.newYork,
-  },
-  {
-    id: 6,
-    image: images.japan,
-  },
+  images.japan,
+  images.newYork,
+  images.japan,
+  images.newYork,
+  images.japan,
+  images.newYork,
 ];
