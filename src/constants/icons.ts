@@ -34,7 +34,9 @@ import carParkIcon from '../assets/icons/carPark.png';
 import cutleryIcon from '../assets/icons/cutlery.png';
 import locationIcon from '../assets/icons/location.png';
 import heartOrangeIcon from '../assets/icons/heartOrange.png';
-
+import backBtnIcon from '../assets/icons/backBtn.png';
+import btnIcon from '../assets/icons/btn.png';
+import plusBtnIcon from '../assets/icons/plusBtn.png';
 
 export default {
   googleIcon,
@@ -73,4 +75,9 @@ export default {
   cutleryIcon,
   locationIcon,
   heartOrangeIcon,
+  backBtnIcon,
+  btnIcon,
+  plusBtnIcon
+
+
 };

@@ -4,6 +4,7 @@ import user from '../assets/images/user.png';
 import japan from '../assets/images/japan.png';
 import newYork from '../assets/images/new-york.png';
 import map from '../assets/images/map.png';
+import barChart from '../assets/images/barChart.png';
 
 
 export default {
@@ -13,4 +14,5 @@ export default {
   japan,
   newYork,
   map,
+  barChart,
 };

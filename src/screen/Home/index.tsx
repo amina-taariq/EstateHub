@@ -11,9 +11,12 @@ import fonts from '../../utils/fonts';
 import { cards, featuredCards } from '../../constants/data';
 import HomeSlider from './HomeSlider';
 import CategoriesGrid from './CategoriesGrid';
+import { useState } from 'react';
+import FilterBottomsheet from '../FilterBottomsheet';
 
 const Home: React.FC = () => {
- 
+   const [sheetVisible, setSheetVisible] = useState(false);
+
   return (
     <View style={styles.container}>
       <KeyboardAvoidingView
@@ -24,7 +27,7 @@ const Home: React.FC = () => {
           keyboardShouldPersistTaps="handled"
           showsVerticalScrollIndicator={false}
         >
-          <HomeHeader />
+          <HomeHeader onFilterPress={() => setSheetVisible(true)} />
           <View style={styles.titleContainer}>
             <Text style={styles.h2}>Featured</Text>
             <Text style={styles.seeAll}>See All</Text>
@@ -37,6 +40,10 @@ const Home: React.FC = () => {
           <CategoriesGrid data={cards} />
         </ScrollView>
       </KeyboardAvoidingView>
+      <FilterBottomsheet
+        visible={sheetVisible}
+        onClose={() => setSheetVisible(false)}
+      />
     </View>
   );
 };

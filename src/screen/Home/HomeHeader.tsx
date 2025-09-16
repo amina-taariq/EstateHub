@@ -3,8 +3,11 @@ import images from '../../constants/images';
 import icons from '../../constants/icons';
 import fonts from '../../utils/fonts';
 import { TextInput } from 'react-native-gesture-handler';
+type HomeHeaderProps = {
+  onFilterPress: () => void;
+};
 
-const HomeHeader: React.FC = () => {
+const HomeHeader: React.FC<HomeHeaderProps> = ({ onFilterPress }) => {
   return (
     <View style={styles.container}>
       <View style={styles.profileContainer}>
@@ -32,7 +35,10 @@ const HomeHeader: React.FC = () => {
             style={styles.input}
           />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.notificationIconContainer}>
+        <TouchableOpacity
+          style={styles.notificationIconContainer}
+          onPress={onFilterPress}
+        >
           <Image source={icons.filterIcon} style={styles.Icons} />
         </TouchableOpacity>
       </View>
