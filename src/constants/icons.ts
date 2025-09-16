@@ -22,6 +22,18 @@ import shareIcon from '../assets/icons/share.png';
 import bedIcon from '../assets/icons/bed.png';
 import bathIcon from '../assets/icons/bath.png';
 import areaIcon from '../assets/icons/area.png';
+import gymIcon from '../assets/icons/gym.png';
+import laundayIcon from '../assets/icons/laundry.png';
+import runIcon from '../assets/icons/run.png';
+import swimIcon from '../assets/icons/swim.png';
+import wifiIcon from '../assets/icons/wifi.png';
+import dogIcon from '../assets/icons/dog.png';
+import callIcon from '../assets/icons/call.png';
+import chatIcon from '../assets/icons/chat.png';
+import carParkIcon from '../assets/icons/carPark.png';
+import cutleryIcon from '../assets/icons/cutlery.png';
+import locationIcon from '../assets/icons/location.png';
+import heartOrangeIcon from '../assets/icons/heartOrange.png';
 
 
 export default {
@@ -49,4 +61,16 @@ export default {
   bedIcon,
   bathIcon,
   areaIcon,
+  gymIcon,
+  laundayIcon,
+  runIcon,
+  swimIcon,
+  wifiIcon,
+  dogIcon,
+  callIcon,
+  chatIcon,
+  carParkIcon,
+  cutleryIcon,
+  locationIcon,
+  heartOrangeIcon,
 };

@@ -112,35 +112,35 @@ export const settings = [
 export const facilities = [
   {
     title: "Laundry",
-    icon: icons.laundry,
+    icon: icons.laundayIcon,
   },
   {
     title: "Car Parking",
-    icon: icons.carPark,
+    icon: icons.carParkIcon,
   },
   {
     title: "Sports Center",
-    icon: icons.run,
+    icon: icons.runIcon,
   },
   {
     title: "Cutlery",
-    icon: icons.cutlery,
+    icon: icons.cutleryIcon,
   },
   {
     title: "Gym",
-    icon: icons.dumbell,
+    icon: icons.gymIcon,
   },
   {
     title: "Swimming pool",
-    icon: icons.swim,
+    icon: icons.swimIcon,
   },
   {
     title: "Wifi",
-    icon: icons.wifi,
+    icon: icons.wifiIcon,
   },
   {
     title: "Pet Center",
-    icon: icons.dog,
+    icon: icons.dogIcon,
   },
 ];
 
@@ -151,4 +151,9 @@ export const gallery = [
   images.newYork,
   images.japan,
   images.newYork,
+  images.japan,
+  images.newYork,
+  images.japan,
+  images.newYork,
+  
 ];
