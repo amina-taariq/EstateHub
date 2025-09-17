@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { StyleSheet, View, Image, Text } from 'react-native';
 import images from '../../constants/images'
 import { StackNavigationProp } from '@react-navigation/stack';
