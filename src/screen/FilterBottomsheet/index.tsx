@@ -48,9 +48,13 @@ const FilterBottomsheet: React.FC<FilterBottomsheetProps> = ({
     >
       <View style={styles.sheet}>
         <View style={styles.header}>
-          <Image source={icons.backBtnIcon} style={styles.btnIcon} />
+          <TouchableOpacity onPress={onClose}>
+            <Image source={icons.backBtnIcon} style={styles.btnIcon} />
+          </TouchableOpacity>
           <Text style={styles.title}>Filter</Text>
-          <Text style={styles.reset}>Reset</Text>
+          <TouchableOpacity>
+            <Text style={styles.reset}>Reset</Text>
+          </TouchableOpacity>
         </View>
         <View style={styles.priceRangeSection}>
           <Text style={styles.H1}>Price Range</Text>
