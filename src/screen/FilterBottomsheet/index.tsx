@@ -13,55 +13,30 @@ import images from '../../constants/images';
 import MultiSlider from '@ptomasroos/react-native-multi-slider';
 import { useState } from 'react';
 import { categories } from '../../constants/data';
+import CustomMarker from '../../components/CustomMarker/CustomMarker';
 interface FilterBottomsheetProps {
   visible: boolean;
   onClose: () => void;
 }
-const CustomMarker = ({ currentValue }: { currentValue: number }) => {
-  return (
-    <View style={{ alignItems: 'center' }}>
-      {/* Circle marker (stays centered on the track) */}
-      <View
-        style={{
-          width: 24,
-          height: 24,
-          borderRadius: 12,
-          borderWidth: 3,
-          borderColor: '#FF8000',
-          backgroundColor: '#fff',
-        }}
-      />
 
-      {/* Price text absolutely below the circle */}
-      <Text
-        style={{
-          position: 'absolute',
-          top: 30, // push text below the circle
-          fontSize: 12,
-          color: '#FF8000',
-          fontFamily: fonts.SemiBold,
-          fontWeight: 800,
-        }}
-      >
-        ${currentValue}
-      </Text>
-    </View>
-  );
-};
 
 const FilterBottomsheet: React.FC<FilterBottomsheetProps> = ({
   visible,
   onClose,
 }) => {
-    const [buildingSize, setBuildingSize] = useState<[number, number]>([
-      500, 50000,
-    ]);
-     const [priceRange, setPriceRange] = useState<[number, number]>([
-       500, 50000,
-     ]);
-    const [selected, setSelected] = useState('');
-    const [bedrooms, setBedrooms] = useState(1);
-    const [bathrooms, setBathrooms] = useState(1);
+  const [buildingSize, setBuildingSize] = useState<[number, number]>([1, 5000]);
+  const [priceRange, setPriceRange] = useState<[number, number]>([500, 50000]);
+  const [selected, setSelected] = useState<string[]>([]);
+  const [bedrooms, setBedrooms] = useState(1);
+  const [bathrooms, setBathrooms] = useState(1);
+  const toggleSelection = (category: string) => {
+    setSelected(
+      prev =>
+        prev.includes(category)
+          ? prev.filter(c => c !== category)
+          : [...prev, category], 
+    );
+  };
 
   return (
     <Modal
@@ -92,7 +67,7 @@ const FilterBottomsheet: React.FC<FilterBottomsheetProps> = ({
                 selectedStyle={styles.selectedStyle}
                 unselectedStyle={styles.unselectedStyle}
                 customMarker={e => (
-                  <CustomMarker currentValue={e.currentValue} />
+                  <CustomMarker currentValue={e.currentValue} isPrice={true} />
                 )}
               />
             </View>
@@ -101,28 +76,29 @@ const FilterBottomsheet: React.FC<FilterBottomsheetProps> = ({
         <View style={styles.propertyType}>
           <Text style={styles.H1}>Property Type</Text>
           <View style={styles.categoriesContainer}>
-            {categories.slice(1, -1).map((item, index) => (
-              <TouchableOpacity
-                key={index}
-                style={[
-                  styles.category,
-                  selected === item.category && {
-                    backgroundColor: '#FF8000',
-                  },
-                ]}
-                onPress={() => setSelected(item.category)}
-              >
-                <Text
-                  style={
-                    selected === item.category
-                      ? styles.SelectedCategoryText
-                      : styles.categoryText
-                  }
+            {categories.slice(1, -1).map((item, index) => {
+              const isSelected = selected.includes(item.category);
+              return (
+                <TouchableOpacity
+                  key={index}
+                  style={[
+                    styles.category,
+                    isSelected && { backgroundColor: '#FF8000' },
+                  ]}
+                  onPress={() => toggleSelection(item.category)}
                 >
-                  {item.title}
-                </Text>
-              </TouchableOpacity>
-            ))}
+                  <Text
+                    style={
+                      isSelected
+                        ? styles.SelectedCategoryText
+                        : styles.categoryText
+                    }
+                  >
+                    {item.title}
+                  </Text>
+                </TouchableOpacity>
+              );
+            })}
           </View>
         </View>
         <View style={styles.details}>
@@ -163,25 +139,25 @@ const FilterBottomsheet: React.FC<FilterBottomsheetProps> = ({
         <View style={styles.buildingSize}>
           <Text style={styles.H1}>Building Size</Text>
           <View>
-            <View style={styles.sliderContainer}>
+            <View style={styles.buildingSizeslider}>
               <MultiSlider
-                values={[priceRange[0], priceRange[1]]}
-                min={500}
-                max={50000}
+                values={[buildingSize[0], buildingSize[1]]}
+                min={1}
+                max={5000}
                 step={1}
                 trackStyle={styles.trackStyle}
                 sliderLength={Dimensions.get('window').width - 50}
                 selectedStyle={styles.selectedStyle}
-                unselectedStyle={styles.unselectedStyle}
+                unselectedStyle={styles.buildingSizesliderUnselectedStyle}
                 customMarker={e => (
-                  <CustomMarker currentValue={e.currentValue} />
+                  <CustomMarker currentValue={e.currentValue} isPrice={false} />
                 )}
               />
             </View>
           </View>
         </View>
         <TouchableOpacity style={styles.setFilterBtn}>
-          <Text>Set Filter</Text>
+          <Text style={styles.btnText}>Set Filter</Text>
         </TouchableOpacity>
       </View>
     </Modal>
@@ -197,7 +173,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 24,
     borderTopRightRadius: 24,
     paddingHorizontal: 20,
-    paddingBottom: 80,
+    paddingBottom: 14,
     paddingTop: 24,
     elevation: 24,
     shadowColor: '#000',
@@ -310,10 +286,30 @@ const styles = StyleSheet.create({
     fontFamily: fonts.SemiBold,
     fontWeight: 500,
   },
-  buildingSize: {},
+  buildingSize: {
+    marginTop: 20,
+    gap: 16,
+  },
   setFilterBtn: {
+    marginTop: 30,
     backgroundColor: '#FF8000',
-    borderRadius:100,
+    borderRadius: 100,
+    padding: 16,
+  },
+  buildingSizeslider: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginHorizontal: 5,
+  },
+  btnText: {
+    color: '#FFFFFF',
+    fontSize: 16,
+    fontFamily: fonts.SemiBold,
+    fontWeight: 800,
+    alignSelf: 'center',
+  },
+  buildingSizesliderUnselectedStyle: {
+    backgroundColor: '#FF80001A',
   },
 });
 
